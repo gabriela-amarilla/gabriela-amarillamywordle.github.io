@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik+Mono+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Rubik+Mono+One&display=swap');
+
+
+body {
+    text-align: center;
+    font-family: "Roboto Flex", sans-serif;
+}
+
+h1 {
+    font-family: "Rubik Mono One", monospace;
+    background-color: #7398C4 ;
+    padding: 3%;
+}
+h2, h3 {
+    font-family: "Roboto Flex", sans-serif;
+    font-weight: 700;
+    font-style: oblique;
+}
+
+.btn1 {
+    border-radius: 5px;
+    border-color: rgb(235, 232, 232);
+    background-color: white;
+    font-family: "Roboto Flex", sans-serif;
+    padding: 5px 10px;
+    border-width: 1px;
+}
+
+.btn2 {
+    width: 50%;
+    background-color: #4263A3;
+    border-radius: 5px;
+    border: none;
+    padding: 5px 10px;
+    color: white;
+}
+
+nav {
+    text-align: center;
+    padding: 10px ;
+    margin: 5px;
+    box-sizing: border-box;
+}
+
+nav a{
+    padding: 10px;
+    text-decoration: dashed;
+    color: gray;
+    font-family: "Roboto Flex", sans-serif;
+    font-size: small;
+}
+
+.grid {
+    gap: 20px;
+
+}
+
+.square {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    border-color: #dde5ef;
+    border-width: 1px;
+    padding: 5px;
+    font-size: 50px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.resultado {
+    font-size: 35px;
+}
+
+.btn3 {
+    display: inherit;
+    width: 100px;
+    border-radius: 5px;
+    background-color: #4263A3;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+}
+
+.btn3:hover {
+    border: 1px solid #4263A3;
+    background-color: white;
+    color: #4263A3
+}

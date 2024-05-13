@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Wordle</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
+
+    </head>
+
+    <header>
+        <div id="intro"> 
+            <h1> My Wordle</h1>
+            <h2> Bienvenido/a a nuestro juego de adivinanzas de palabras</h2>
+        </div>
+    </header>
+
+    <body>
+        <div id="inicio"> 
+            
+
+            <div id="setting">
+                <div id="len">
+                    <h3> Elegir Idioma</h3>
+                    <button class="btn1">ESPAÑOL</button>
+                    <button class="btn1">INGLÉS</button>
+                </div>
+
+                <div id="level">
+                    <h3> Dificultad</h3>
+                    <button class="btn1">PRINCIPIANTE</button>
+                    <button class="btn1">INTERMEDIO</button>
+                    <button class="btn1">AVANZADO</button>
+                </div>
+
+                <br>
+
+                <button class="btn2"> INICIAR</button>
+
+            </div>
+        </div>
+        
+        <br> 
+
+        <div id="juego">
+            <nav class="#">
+                <a href="Inicio"> Inicio</a>
+                <a href="Idioma"> Idioma</a>
+                <a href="Dificultad"> Dificultad</a>
+                <a href="Mis-Jugadas"> Mis Jugadas</a>
+            </nav>
+
+            <div class="grid"> 
+                <input type="text" maxlength="1" class="square">
+                <input type="text" maxlength="1" class="square">
+                <input type="text" maxlength="1" class="square">
+                <input type="text" maxlength="1" class="square">
+                <input type="text" maxlength="1" class="square">
+            </div>
+            <div class="grid"> 
+                <input type="text" maxlength="1" class="square">
+                <input type="text" maxlength="1" class="square">
+                <input type="text" maxlength="1" class="square">
+                <input type="text" maxlength="1" class="square">
+                <input type="text" maxlength="1" class="square">
+            </div>
+            <div class="grid"> 
+                <input type="text" maxlength="1" class="square">
+                <input type="text" maxlength="1" class="square">
+                <input type="text" maxlength="1" class="square">
+                <input type="text" maxlength="1" class="square">
+                <input type="text" maxlength="1" class="square">
+            </div>
+            <div class="grid"> 
+                <input type="text" maxlength="1" class="square">
+                <input type="text" maxlength="1" class="square">
+                <input type="text" maxlength="1" class="square">
+                <input type="text" maxlength="1" class="square">
+                <input type="text" maxlength="1" class="square">
+            </div>
+
+            <button class="btn3"> RESTART </button><br>
+            <button class="btn3"> HINT </button>
+
+        </div>
+
+        <div class="resultado">
+
+            <p> Ganaste!</p>
+
+        </div>
+       
+    </body>
+</html>
