@@ -42,11 +42,18 @@ squares.forEach (element =>{
         if (evento.target.nextElementSibling) {
             evento.target.nextElementSibling.focus ();
         } else {
+             //cambiar estilo si letra ok pero posicion oknt
+             let existingIndexArray = existingLetter(wordArray, userInput);
+            
+             existingIndexArray.forEach (element => {
+                 squares [element].classList.add('gold');
+             });
+
             //comparar arreglos y estilear
             let rightIdex = compareArrays(wordArray, userInput);
             console.log (rightIdex);
             rightIdex.forEach (element => {
-                squares [element].classList.add('green')
+                squares [element].classList.add('green'); 
             })
 
             //si los arreglos son iguales
@@ -55,13 +62,22 @@ squares.forEach (element =>{
                 <button class="btn3"> RESTART </button>`
             }
 
-            console.log(wordArray)
+            //crear una nueva fila
+          
+
+
+        //     let resetBtn = document.querySelector('.btn3');
+        //     resetBtn.addEventListener ('click', () => {
+        //         location.reload();
+        // })
 
             //crear nueva linea
         }
         
     })
 })
+
+
 
 
 //funciones
@@ -77,3 +93,23 @@ function compareArrays(array1, array2){
     });
     return equalsIndex;
 }
+
+function existingLetter (array1, array2){
+    let existingIndexArray = [];
+    array2.forEach((element, index)=>{
+        if (array1.includes(element)){
+            existingIndexArray.push(index)
+        }
+    });
+    return existingIndexArray;
+}
+
+document.body.onload = addGrid; 
+
+function addGrid(){
+    var newGrid = document.createElement("div");
+    newGrid.classList.add("grid");
+    newGrid.setAttribute("id", "2");
+    console.log (newGrid);
+}
+
