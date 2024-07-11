@@ -1,11 +1,9 @@
-
-
 let resultElement = document.querySelector ('.resultado');
 let mainContainer = document.querySelector ('.main-container')
 let gridId = 1;
 
-
-let word = 'texto';
+let words = ['texto', 'autos', 'juego','perro']
+let word = getRandomWord();
 let wordArray = word.toUpperCase().split ('');
 console.log (wordArray)
 
@@ -14,7 +12,9 @@ let actualGrid = document.querySelector('.grid');
 drawSquares (actualGrid);
 listenInput(actualGrid);
 
-
+function getRandomWord () {
+    return words[Math.floor(Math.random()* words.length)];
+}
 
 function listenInput(actualGrid) {
     let squares = actualGrid.querySelectorAll ('.square')
@@ -36,24 +36,21 @@ function listenInput(actualGrid) {
 
                         let squaresFilled = document.querySelectorAll ('.square');
                         squaresFilled = [...squaresFilled];
+                        let lastFiveSquaresFilled = squaresFilled.slice(-5);
                         let finalUserInput = [];
-                        squaresFilled.forEach (element => {
+                        lastFiveSquaresFilled.forEach (element => {
                             finalUserInput.push (element.value.toUpperCase()) 
                         });
 
-                        console.log (finalUserInput);
-                        console.log (userInput);
-
-
                         //cambiar estilo si letra ok pero posicion oknt
-                        let existingIndexArray = existingLetter(wordArray, userInput);
+                        let existingIndexArray = existingLetter(wordArray, finalUserInput);
                         existingIndexArray.forEach (element => {
 
                             squares [element].classList.add('gold');
                         });
 
                         //comparar arreglos y estilear
-                        let rightIdex = compareArrays(wordArray, userInput);
+                        let rightIdex = compareArrays(wordArray, finalUserInput);
                         console.log (rightIdex);
                         rightIdex.forEach (element => {
                             squares [element].classList.add('green'); 
@@ -84,10 +81,6 @@ function listenInput(actualGrid) {
         })
     })
 }
-
-
-
-
 
 
 //funciones
@@ -125,7 +118,8 @@ function addGrid(){
         mainContainer.appendChild(newGrid);
         return newGrid;
     } else {
-        showResult(`Bummer. Intentar de nuevo, la respuesta correcta era: "${word.toUpperCase()}"`)
+        showResult(`Bummer. Intentar de nuevo, la respuesta correcta era: "${word.toUpperCase()}". El juego se reiniciara en 5 segundos`);
+        setTimeout (resetGame,5000);
     }
     
 }
@@ -149,6 +143,18 @@ function showResult (textMsg) {
     
     let resetBtn = document.querySelector('.btn3');
     resetBtn.addEventListener ('click', () => {
-    location.reload();
+        resetGame()//location.reload();
         })
 }
+
+function resetGame() {
+    gridId = 1;
+    word = getRandomWord(); // Obtener una nueva palabra
+    wordArray = word.toUpperCase().split('');
+    console.log(wordArray);
+    mainContainer.innerHTML = '<div class="grid" id="1"></div>';
+    actualGrid = document.querySelector('.grid');
+    drawSquares(actualGrid);
+    listenInput(actualGrid);
+    resultElement.innerHTML = ''; // Limpiar el resultado
+  }
